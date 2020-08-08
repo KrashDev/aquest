@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrow : MonoBehaviour
+public class Fireball : MonoBehaviour
 {
     public float speed;
     public Rigidbody2D myRigidbody;

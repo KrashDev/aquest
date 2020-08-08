@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5437590749466216817}
   - component: {fileID: 7707637548696946526}
+  - component: {fileID: -6475758534143687131}
   - component: {fileID: 2321378382583339989}
   - component: {fileID: 4243475547928788892}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,6 +84,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-6475758534143687131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751255545854234827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27710d904f02e41ea8bd80c574a80ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  myRigidbody: {fileID: 2321378382583339989}
 --- !u!50 &2321378382583339989
 Rigidbody2D:
   serializedVersion: 4
