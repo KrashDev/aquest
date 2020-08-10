@@ -14,13 +14,23 @@ public enum PlayerState{
 public class PlayerMovement : MonoBehaviour
 {
 
-    //just added
+
     public PlayerState currentState;
     public float speed;
     private Rigidbody2D myRigidBody;
     private Vector3 change;
     private Animator animator;
     public GameObject projectile;
+
+
+    //dash mechanics
+    public float DashForce;
+    public float StartDashTimer;
+    float CurrentDashTimer;
+    float DashDirection;
+    bool isDashing;
+
+    //---------------------------
 
 
     // Start is called before the first frame update
@@ -48,6 +58,28 @@ public class PlayerMovement : MonoBehaviour
         {
             UpdateAnimationAndMove();
         }
+
+        if (Input.GetButtonDown("Dash"))
+        {
+                isDashing = true;
+                CurrentDashTimer = StartDashTimer;
+                // DashDirection = change.x;
+                speed = 24;
+
+        }
+
+        if(isDashing)
+        {
+            myRigidBody.velocity = Vector3.zero;
+            CurrentDashTimer -= Time.deltaTime;
+
+            if(CurrentDashTimer <= 0)
+            {
+                speed = 8;
+                isDashing = false;
+            }
+        }
+
 	}
 
     private IEnumerator SecondAttackCo()
