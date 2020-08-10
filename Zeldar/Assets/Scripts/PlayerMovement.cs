@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     //dash mechanics
+    public ParticleSystem Dust;
     public float DashForce;
     public float StartDashTimer;
     float CurrentDashTimer;
@@ -61,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Dash"))
         {
+                CreateDust();
                 isDashing = true;
                 CurrentDashTimer = StartDashTimer;
                 // DashDirection = change.x;
@@ -130,4 +132,9 @@ public class PlayerMovement : MonoBehaviour
             transform.position + change * speed * Time.deltaTime
         );
     }
+
+    void CreateDust(){
+        Dust.Play();
+    }
+
 }
